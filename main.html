@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+   .typewriter {
+        font-family: monospace;
+        font-size: 18px;
+        margin: 20px;
+    }
+   .typewriter p {
+        white-space: pre-wrap;
+    }
+     body {
+            background-image: linear-gradient(to bottom, #ffa4a4, #fce4ec);
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+button {
+  /* Light red color */
+  background-color: #fd4d4d;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+}
+
+button:hover {
+  /* Hover effect: pulse and shadow */
+  animation: pulse 0.5s infinite;
+  box-shadow: 0 0 10px rgba(255, 197, 197, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="typewriter">
+    <p id="paragraph"></p>
+    <button id="button" style="display: none;">A small Gift</button>
+</div>
+<script>
+const paragraphs = [
+  "Umm, Hii Tinni!",
+  "\nI hope You read this full ",
+  "\n\n\nYk we quarrel so much...",
+  " Our love is'nt always pretty",
+  "\nSometimes its boring, sometimes it really makes us sad. ",
+  "Our life is really messed up, yet we will choose each other in this life over and over again,", 
+  " Yk if I was born again, I would wish to be in this same fucked up life, with you, growing up again where I would meet the same Tinni for the first time, fall in love with her again",
+  "\n\nAmi jani Tinni je you have past traumas, past depressions, past betreyals and i know that you are wounded but trust me, If betreyal can hurt then love can heal.",
+  "\nJaanish Tiasa, in my life there is a person, who is always there with me no matter what. There is 'someone' whom I can call my bestfriend or my soulmate... There is someone who I know will be there for me in the hardest part of my life no matter what I was before or what I am now... That person, that someone is you",
+  "\n\nYou came in my life as a blessing 🛐🛐 ",
+  "\nThankyou for existing in my life Tinni, \nthankyou making my life worth living ", 
+  "\n\nI am gonna give my everything till my last breath",
+  "\nYkw ami kokhono toke niye bored hoyini Tinni aar konodin hobouna",
+  "\nTor oi mismatched series er dialogue ta mone ache?",
+  "\n\nYou are really my beginning, my middle, and my end ❤",
+  "\nAnd once again a very very Happy Birthday Tinni, Its been 208 days we're together",
+  "\nThere's More ❤"
+];
+
+let paragraphIndex = 0;
+let charIndex = 0;
+const paragraphElement = document.getElementById("paragraph");
+const buttonElement = document.getElementById("button");
+
+function typeParagraph() {
+  const paragraph = paragraphs[paragraphIndex];
+  const char = paragraph[charIndex];
+
+  if (charIndex < paragraph.length) {
+    paragraphElement.textContent += char;
+    charIndex++;
+    setTimeout(typeParagraph, 100); // adjust the speed of typing
+  } else {
+    paragraphIndex++;
+    charIndex = 0;
+    if (paragraphIndex < paragraphs.length) {
+      setTimeout(typeParagraph, 1200); // adjust the delay between paragraphs
+    } else {
+      // all paragraphs have been typed, show the button
+      buttonElement.style.display = "block";
+      buttonElement.addEventListener("click", function() {
+        window.location.href = "zindex.html";
+      });
+    }
+  }
+}
+
+typeParagraph();
+
+const div = document.getElementById('typewriter'); // replace with your div ID
+
+div.addEventListener('DOMSubtreeModified', function() {
+  div.scrollTop = div.scrollHeight;
+});
+</script>
+</body>
+</html>
